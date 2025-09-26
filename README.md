@@ -12,6 +12,8 @@ Adds a sleek, customizable and animated directional hover/touch overlay to any e
 - Full cleanup: restores original content and removes listeners/children
 - Extensible: pass custom classes, attributes, and animation callbacks
 
+[Demo](https://svelte.dev/playground/7099dfc0d2b64a8d96250505d29140bd?version=latest)
+
 ## Installation
 
 ```bash
@@ -29,7 +31,7 @@ yarn add @arisbh/dirhover-svelte
 ## Usage
 
 ```svelte
-<script lang="ts">
+<script>
 	import { dirhover } from '@arisbh/dirhover-svelte';
 </script>
 
