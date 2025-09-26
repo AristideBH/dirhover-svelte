@@ -1,58 +1,65 @@
-# Svelte library
+# #Svelte attachement: dirhover
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+Adds a professional, animated directional hover/touch overlay to any element.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Features
 
-## Creating a project
+- Directional animation based on mouse entry/exit or touch
+- Customizable overlay color, opacity, blend mode, and animation
+- Theming support via CSS variable (`--dirhover-overlay-bg`)
+- Accessibility: overlay is `aria-hidden`, parent/child/curtain can receive ARIA and tabindex attributes
+- SSR-safe: no DOM/GSAP code runs on server
+- Full cleanup: restores original content and removes listeners/children
+- Extensible: pass custom classes, attributes, and animation callbacks
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Usage
 
-```sh
-# create a new project in the current directory
-npx sv create
+```svelte
+<button {@attach dirhover()} />
 
-# create a new project in my-app
-npx sv create my-app
+<!-- or -->
+
+<button
+	{@attach dirhover({
+		animation: { duration: 0.3, ease: 'power2.out' },
+		overlay: { background: 'rgba(0,0,0,0.2)', opacity: 0.7, mixBlendMode: 'multiply' },
+		touchPosition: { start: 'left', end: 'bottom' },
+		parentClass: 'custom-parent',
+		childClass: 'custom-child',
+		curtainClass: 'custom-curtain',
+		parentAttrs: { tabindex: '0', 'aria-label': 'Hoverable' },
+		childAttrs: { 'aria-live': 'polite' },
+		curtainAttrs: { 'aria-hidden': 'true' },
+		onEnter: () => console.log('Hover in'),
+		onLeave: () => console.log('Hover out')
+	})}
+/>
 ```
 
-## Developing
+## Options
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- `animation`: { duration, ease } — GSAP animation settings
+- `overlay`: { background, opacity, mixBlendMode } — overlay appearance
+- `touchPosition`: { start, end } — direction for touch enter/leave
+- `parentClass`, `childClass`, `curtainClass`: custom CSS classes
+- `parentAttrs`, `childAttrs`, `curtainAttrs`: custom attributes (ARIA, tabindex, etc.)
+- `onEnter`, `onLeave`: callbacks for animation lifecycle
 
-```sh
-npm run dev
+## Accessibility
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- Overlay is `aria-hidden` by default
+- Pass ARIA attributes/tabindex to parent/child/curtain for full control
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Theming
 
-## Building
+- Use CSS variable `--dirhover-overlay-bg` to override overlay background
+  Example: `:root { --dirhover-overlay-bg: rgba(0,0,0,0.15); }`
 
-To build your library:
+## SSR
 
-```sh
-npm pack
-```
+- Action is a no-op on server (safe for SvelteKit/SSR)
 
-To create a production version of your showcase app:
+## Cleanup
 
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-npm publish
-```
+- Removes all event listeners and children
+- Restores original node content
