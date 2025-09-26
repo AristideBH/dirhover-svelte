@@ -1,4 +1,4 @@
-import type { DirectionalHoverPosition } from "./dirHover.types";
+import type { DirectionalHoverPosition } from "./dirHover.types.js";
 
 export function detectSide(event: MouseEvent, rect: DOMRect): string {
     const x = event.clientX - rect.left;

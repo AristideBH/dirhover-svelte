@@ -1,4 +1,4 @@
-import type { defaultOptions } from './dirHover.attach';
+import type { defaultOptions } from './dirHover.attach.js';
 
 export type DirectionalHoverPosition = 'top' | 'bottom' | 'left' | 'right' | 'center';
 
@@ -38,6 +38,6 @@ export type DirHoverHandlerParams = {
     action: ActionAnimation;
     curtain: HTMLElement;
     options: typeof defaultOptions;
-    getDirection: (action: ActionAnimation, event?: Event) => import('./dirHover.types').DirectionalHoverPosition;
+    getDirection: (action: ActionAnimation, event?: Event) => import('./dirHover.types.js').DirectionalHoverPosition;
     event?: Event;
 };

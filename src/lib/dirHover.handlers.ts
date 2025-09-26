@@ -1,7 +1,7 @@
 import gsap from 'gsap';
-import { defaultOptions, tweenMap } from './dirHover.attach';
-import { getPositionFromSide, detectSide } from './dirHover.utils';
-import type { ActionAnimation, DirHoverHandlerParams } from './dirHover.types';
+import { defaultOptions, tweenMap } from './dirHover.attach.js';
+import { getPositionFromSide, detectSide } from './dirHover.utils.js';
+import type { ActionAnimation, DirHoverHandlerParams } from './dirHover.types.js';
 
 function dirHoverHandler({ action, curtain, options, getDirection, event }: DirHoverHandlerParams) {
     if (!curtain) return;
@@ -59,7 +59,7 @@ export function createMouseHandler(
                 const mouseEvent = event as MouseEvent;
                 const element = mouseEvent.currentTarget as Element;
                 const rect = element.getBoundingClientRect();
-                return detectSide(mouseEvent, rect) as import('./dirHover.types').DirectionalHoverPosition;
+                return detectSide(mouseEvent, rect) as import('./dirHover.types.js').DirectionalHoverPosition;
             },
             event
         });
