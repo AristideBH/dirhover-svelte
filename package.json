@@ -1,5 +1,16 @@
 {
 	"name": "@arisbh/dirhover-svelte",
+	"description": "A Svelte action that adds a directional hover effect to any HTML element.",
+	"author": {
+		"name": "AristideBH",
+		"email": "aristide.bruneau@gmail.com",
+		"url": "https://github.com/AristideBH"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
