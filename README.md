@@ -1,6 +1,6 @@
-# #Svelte attachement: dirhover
+# Svelte attachement: dirhover
 
-Adds a professional, animated directional hover/touch overlay to any element.
+Adds a sleek, customizable and animated directional hover/touch overlay to any element.
 
 ## Features
 
@@ -11,6 +11,20 @@ Adds a professional, animated directional hover/touch overlay to any element.
 - SSR-safe: no DOM/GSAP code runs on server
 - Full cleanup: restores original content and removes listeners/children
 - Extensible: pass custom classes, attributes, and animation callbacks
+
+## Installation
+
+```bash
+npm install @arisbh/dirhover-svelte
+```
+
+```bash
+pnpm add @arisbh/dirhover-svelte
+```
+
+```bash
+yarn add @arisbh/dirhover-svelte
+```
 
 ## Usage
 
