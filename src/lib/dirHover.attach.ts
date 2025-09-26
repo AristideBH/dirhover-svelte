@@ -1,7 +1,7 @@
 import gsap from 'gsap';
-import type { DirectionalHoverAnimation, DirectionalHoverOptions, DirectionalHoverOverlay, DirectionalHoverTouchPosition } from './dirHover.types.ts';
-import { createDirHoverElements, getPositionFromSide } from './dirHover.utils.ts';
-import { createMouseHandler, createTouchHandler } from './dirHover.handlers.ts';
+import type { DirectionalHoverAnimation, DirectionalHoverOptions, DirectionalHoverOverlay, DirectionalHoverTouchPosition } from './dirHover.types.js';
+import { createDirHoverElements, getPositionFromSide } from './dirHover.utils.js';
+import { createMouseHandler, createTouchHandler } from './dirHover.handlers.js';
 
 
 export const defaultOptions: {
