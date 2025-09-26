@@ -15,6 +15,10 @@ Adds a professional, animated directional hover/touch overlay to any element.
 ## Usage
 
 ```svelte
+<script lang="ts">
+	import { dirhover } from '@arisbh/dirhover-svelte';
+</script>
+
 <button {@attach dirhover()} />
 
 <!-- or -->

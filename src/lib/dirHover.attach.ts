@@ -107,7 +107,8 @@ export default function dirhover(userOptions: DirectionalHoverOptions = {}) {
         node.setAttribute('data-dirhover', 'parent');
         Object.assign(node.style, {
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            display: 'inline-block'
         });
         if (userOptions.parentClass) node.classList.add(userOptions.parentClass);
         if (userOptions.parentAttrs) Object.entries(userOptions.parentAttrs).forEach(([k, v]) => node.setAttribute(k, v));
