@@ -25,12 +25,12 @@ export function detectSide(event: MouseEvent, rect: DOMRect): string {
  */
 export function getPositionFromSide(side: DirectionalHoverPosition): { xPercent: number; yPercent: number } {
     switch (side) {
-        case 'left': return { xPercent: -100, yPercent: 0 };
-        case 'right': return { xPercent: 100, yPercent: 0 };
-        case 'top': return { xPercent: 0, yPercent: -100 };
-        case 'bottom': return { xPercent: 0, yPercent: 100 };
+        case 'left': return { xPercent: -101, yPercent: 0 };
+        case 'right': return { xPercent: 101, yPercent: 0 };
+        case 'top': return { xPercent: 0, yPercent: -101 };
+        case 'bottom': return { xPercent: 0, yPercent: 101 };
         case 'center': return { xPercent: 0, yPercent: 0 };
-        default: return { xPercent: 0, yPercent: 100 };
+        default: return { xPercent: 0, yPercent: 101 };
     }
 }
 
